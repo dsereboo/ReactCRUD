@@ -8,7 +8,7 @@ const Users=(props)=>{
         <Container>
             <Row>
                 {props.userData.map(user=>(
-                    <User userInfo={user} key={user.id}/>
+                    <User userInfo={user} key={user.id} deleteUser={props.deleteUser}/>
                 ))}
             </Row>
         </Container>

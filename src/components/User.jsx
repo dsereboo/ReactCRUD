@@ -2,6 +2,10 @@ import React from "react"
 import { Card,Button,Col } from "react-bootstrap"
 
 const User=(props)=>{
+    const hanldeClick=()=>{
+        props.deleteUser(props.userInfo.id)
+    }
+
     return(
         <Col md="5">
             <Card>
@@ -14,7 +18,7 @@ const User=(props)=>{
                         <p>Grade: {props.userInfo.grade}</p>
                     </Card.Text>
                     <Card.Link href="#"><Button size="sm" variant="primary">Edit</Button></Card.Link>
-                    <Card.Link href="#"><Button size="sm" variant="danger">Delete</Button></Card.Link>
+                    <Card.Link href="#"><Button size="sm" variant="danger" onClick={hanldeClick}>Delete</Button></Card.Link>
                 </Card.Body>
             </Card>
         </Col>

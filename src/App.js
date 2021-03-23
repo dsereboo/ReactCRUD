@@ -21,6 +21,13 @@ function App() {
     setUsers([...users, user])
   }
 
+  const deleteUser=(id)=>{
+    console.log("click")
+    const undeletedUsers=users.filter(user=> id!==user.id)
+    setUsers(undeletedUsers)
+  }
+  
+
   return (
     <Container>
       <Row>
@@ -28,7 +35,7 @@ function App() {
           <AddUserForm addUser={addUser}/>
         </Col>
         <Col>
-          <Users userData={users}/>
+          <Users userData={users} deleteUser={deleteUser}/>
         </Col>
       </Row>
     </Container>
