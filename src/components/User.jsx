@@ -24,8 +24,8 @@ const User=(props)=>{
             </Modal>
             <Card>
                 <Card.Body>
-                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Student</Card.Subtitle>
+                    <Card.Title>{props.userInfo.id}</Card.Title>
                     <Card.Text>
                         <p>Name: {props.userInfo.name}</p>
                         <p>Age: {props.userInfo.age}</p>
