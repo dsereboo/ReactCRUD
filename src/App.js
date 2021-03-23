@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AddUserForm from './components/AddUserForm';
+import { useState } from 'react';
+import Users from './components/Users';
+
+
 
 function App() {
+  const initalState=[
+    {id:"dsnkn768", name:"Daniel", age:"15", grade:"9"},
+    {id:"ds66n768", name:"Abena", age:"17", grade:"10"},
+    {id:"ds99n768", name:"Adwoa", age:"17", grade:"10"}
+  ]
+
+  const [users,setUsers]=useState(initalState)
+
+  const addUser=(user)=>{
+    user.id=Math.floor(Math.random()).toString()
+    setUsers([...users, user])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <Row>
+        <Col md="4">
+          <AddUserForm addUser={addUser}/>
+        </Col>
+        <Col>
+          <Users userData={users}/>
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
 export default App;
