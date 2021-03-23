@@ -37,6 +37,9 @@ function App() {
   return (
     <Container>
       <Row>
+        <h1> CRUD App</h1>
+      </Row>
+      <Row>
         <Col md="4">
           <AddUserForm addUser={addUser}/>
         </Col>
