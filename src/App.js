@@ -22,9 +22,15 @@ function App() {
   }
 
   const deleteUser=(id)=>{
-    console.log("click")
-    const undeletedUsers=users.filter(user=> id!==user.id)
+    const undeletedUsers=users.filter(user=> user.id!==id)
     setUsers(undeletedUsers)
+  }
+
+  const editUser=(id, updatedUser)=>{
+    setUsers( 
+      users.map(user=> user.id ===id? updatedUser: user)
+    )
+    console.log("Clicked")
   }
   
 
@@ -35,7 +41,7 @@ function App() {
           <AddUserForm addUser={addUser}/>
         </Col>
         <Col>
-          <Users userData={users} deleteUser={deleteUser}/>
+          <Users userData={users} deleteUser={deleteUser} editUser={editUser}/>
         </Col>
       </Row>
     </Container>

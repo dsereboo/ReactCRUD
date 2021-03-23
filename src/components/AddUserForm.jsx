@@ -14,7 +14,7 @@ const AddUserForm=(props)=>{
     const handleSubmit=(event)=>{
         event.preventDefault()
         props.addUser(user)
-        setUser({})
+        setUser()
     }
 
     return(
