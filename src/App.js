@@ -17,7 +17,7 @@ function App() {
   const [users,setUsers]=useState(initalState)
 
   const addUser=(user)=>{
-    user.id=Math.floor(Math.random()).toString()
+    user.id=Math.floor(Math.random()*100).toString()
     setUsers([...users, user])
   }
 
